@@ -89,13 +89,43 @@ public class mainView extends javax.swing.JFrame {
         btnHapus1 = new javax.swing.JButton();
         btnKembali1 = new javax.swing.JButton();
         rekamMedisPanel = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        NamelLabel7RekamMedis = new javax.swing.JLabel();
+        NamelPanel9RekamMedis = new javax.swing.JPanel();
+        Namelanel10 = new javax.swing.JPanel();
+        idRekamMedisRekamMeidis = new javax.swing.JLabel();
+        tanggalRekamMedis = new javax.swing.JLabel();
+        diagnosaRekamMedis = new javax.swing.JLabel();
+        tanggalTextFieldRekamMedis = new javax.swing.JTextField();
+        TextFieldDiagnosaRekamMedis = new javax.swing.JTextField();
+        IDRekamMedisTextFieldRekamMedis = new javax.swing.JTextField();
+        javax.swing.JButton btnCariRekamMedis = new javax.swing.JButton();
+        btnTAMBAHRekamMedis = new javax.swing.JButton();
+        btnHAPUSRekamMedis = new javax.swing.JButton();
+        btNKEMBALIRekamMedis = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableRekamMedis = new javax.swing.JTable();
         obatPanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         transaksiPanel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         ruanganPanel = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        namelLabel10ManagementRuangan = new javax.swing.JLabel();
+        ManagementRuangan = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        NamelPanel9ManagementRuangan = new javax.swing.JPanel();
+        Namelpanel11ManajementRuangan = new javax.swing.JPanel();
+        idRuanganjlabelManagementRuangan = new javax.swing.JLabel();
+        tipeRuanganManajementRuangan = new javax.swing.JLabel();
+        hargaRuanganManagementRuangan = new javax.swing.JLabel();
+        tfHargaRuanganManagementRuangan = new javax.swing.JTextField();
+        idRuanganManagementRuangan = new javax.swing.JTextField();
+        javax.swing.JButton btnCariManagementRuangan = new javax.swing.JButton();
+        btnTAMBAHManagementRuangan = new javax.swing.JButton();
+        btnHAPUSManagementRuangan = new javax.swing.JButton();
+        btNKEMBALIManagementRUangan = new javax.swing.JButton();
+        jComboBoxTipeRuanganManagementRUangan = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tableManagementRuangan = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -250,7 +280,7 @@ public class mainView extends javax.swing.JFrame {
                 .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(726, Short.MAX_VALUE))
+                .addContainerGap(3988, Short.MAX_VALUE))
         );
         dashboardPanelLayout.setVerticalGroup(
             dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,22 +395,23 @@ public class mainView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel17)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtFieldTgglMasuk))
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel18)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtFieldTgglKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFieldTgglMasuk))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFieldTgglKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 3850, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -588,7 +619,7 @@ public class mainView extends javax.swing.JFrame {
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 608, Short.MAX_VALUE)))
+                        .addGap(0, 3861, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -702,7 +733,7 @@ public class mainView extends javax.swing.JFrame {
                                 .addComponent(btnHapus1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnKembali1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(3283, Short.MAX_VALUE))
             .addGroup(pegawaiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pegawaiPanelLayout.createSequentialGroup()
                     .addContainerGap()
@@ -719,7 +750,7 @@ public class mainView extends javax.swing.JFrame {
                     .addComponent(btnKembali1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 322, Short.MAX_VALUE))
+                .addGap(0, 326, Short.MAX_VALUE))
             .addGroup(pegawaiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pegawaiPanelLayout.createSequentialGroup()
                     .addGap(42, 42, 42)
@@ -729,10 +760,163 @@ public class mainView extends javax.swing.JFrame {
 
         mainPanel.add(pegawaiPanel, "card4");
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
-        jLabel7.setText("Rekam Medis");
-        jLabel7.setIconTextGap(10);
+        rekamMedisPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        NamelLabel7RekamMedis.setBackground(new java.awt.Color(255, 255, 255));
+        NamelLabel7RekamMedis.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
+        NamelLabel7RekamMedis.setText("Rekam Medis");
+        NamelLabel7RekamMedis.setIconTextGap(10);
+
+        NamelPanel9RekamMedis.setBackground(new java.awt.Color(0, 153, 153));
+
+        Namelanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Namelanel10.setForeground(new java.awt.Color(255, 255, 255));
+
+        idRekamMedisRekamMeidis.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        idRekamMedisRekamMeidis.setText("ID Rekam Medis");
+
+        tanggalRekamMedis.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        tanggalRekamMedis.setText("Tanggal");
+
+        diagnosaRekamMedis.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        diagnosaRekamMedis.setText("Diagnosa");
+
+        tanggalTextFieldRekamMedis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tanggalTextFieldRekamMedisActionPerformed(evt);
+            }
+        });
+
+        TextFieldDiagnosaRekamMedis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldDiagnosaRekamMedisActionPerformed(evt);
+            }
+        });
+
+        IDRekamMedisTextFieldRekamMedis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IDRekamMedisTextFieldRekamMedisActionPerformed(evt);
+            }
+        });
+
+        btnCariRekamMedis.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCariRekamMedis.setText("cari");
+        btnCariRekamMedis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariRekamMedisActionPerformed(evt);
+            }
+        });
+
+        btnTAMBAHRekamMedis.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTAMBAHRekamMedis.setText("TAMBAH");
+        btnTAMBAHRekamMedis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTAMBAHRekamMedisActionPerformed(evt);
+            }
+        });
+
+        btnHAPUSRekamMedis.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHAPUSRekamMedis.setText("HAPUS");
+        btnHAPUSRekamMedis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHAPUSRekamMedisActionPerformed(evt);
+            }
+        });
+
+        btNKEMBALIRekamMedis.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btNKEMBALIRekamMedis.setText("KEMBALI");
+        btNKEMBALIRekamMedis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNKEMBALIRekamMedisActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Namelanel10Layout = new javax.swing.GroupLayout(Namelanel10);
+        Namelanel10.setLayout(Namelanel10Layout);
+        Namelanel10Layout.setHorizontalGroup(
+            Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Namelanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Namelanel10Layout.createSequentialGroup()
+                        .addGroup(Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idRekamMedisRekamMeidis)
+                            .addComponent(tanggalRekamMedis)
+                            .addComponent(diagnosaRekamMedis))
+                        .addGap(18, 18, 18)
+                        .addGroup(Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(IDRekamMedisTextFieldRekamMedis)
+                            .addComponent(tanggalTextFieldRekamMedis)
+                            .addComponent(TextFieldDiagnosaRekamMedis))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCariRekamMedis))
+                    .addGroup(Namelanel10Layout.createSequentialGroup()
+                        .addComponent(btnTAMBAHRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnHAPUSRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btNKEMBALIRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Namelanel10Layout.setVerticalGroup(
+            Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Namelanel10Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idRekamMedisRekamMeidis)
+                    .addComponent(IDRekamMedisTextFieldRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCariRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tanggalTextFieldRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tanggalRekamMedis))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(diagnosaRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFieldDiagnosaRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Namelanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTAMBAHRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHAPUSRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btNKEMBALIRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        tableRekamMedis.setForeground(new java.awt.Color(255, 255, 255));
+        tableRekamMedis.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID Rekam Medis", "Tanggal", "Diagnosa"
+            }
+        ));
+        jScrollPane2.setViewportView(tableRekamMedis);
+
+        javax.swing.GroupLayout NamelPanel9RekamMedisLayout = new javax.swing.GroupLayout(NamelPanel9RekamMedis);
+        NamelPanel9RekamMedis.setLayout(NamelPanel9RekamMedisLayout);
+        NamelPanel9RekamMedisLayout.setHorizontalGroup(
+            NamelPanel9RekamMedisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NamelPanel9RekamMedisLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(NamelPanel9RekamMedisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Namelanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
+        );
+        NamelPanel9RekamMedisLayout.setVerticalGroup(
+            NamelPanel9RekamMedisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NamelPanel9RekamMedisLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Namelanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout rekamMedisPanelLayout = new javax.swing.GroupLayout(rekamMedisPanel);
         rekamMedisPanel.setLayout(rekamMedisPanelLayout);
@@ -740,15 +924,19 @@ public class mainView extends javax.swing.JFrame {
             rekamMedisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rekamMedisPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(944, Short.MAX_VALUE))
+                .addGroup(rekamMedisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rekamMedisPanelLayout.createSequentialGroup()
+                        .addComponent(NamelLabel7RekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 4167, Short.MAX_VALUE))
+                    .addComponent(NamelPanel9RekamMedis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         rekamMedisPanelLayout.setVerticalGroup(
             rekamMedisPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rekamMedisPanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(754, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(NamelLabel7RekamMedis)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NamelPanel9RekamMedis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainPanel.add(rekamMedisPanel, "card5");
@@ -765,7 +953,7 @@ public class mainView extends javax.swing.JFrame {
             .addGroup(obatPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addContainerGap(923, Short.MAX_VALUE))
+                .addContainerGap(4214, Short.MAX_VALUE))
         );
         obatPanelLayout.setVerticalGroup(
             obatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -789,7 +977,7 @@ public class mainView extends javax.swing.JFrame {
             .addGroup(transaksiPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9)
-                .addContainerGap(917, Short.MAX_VALUE))
+                .addContainerGap(4211, Short.MAX_VALUE))
         );
         transaksiPanelLayout.setVerticalGroup(
             transaksiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -801,10 +989,188 @@ public class mainView extends javax.swing.JFrame {
 
         mainPanel.add(transaksiPanel, "card7");
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
-        jLabel10.setText("Management Ruangan");
-        jLabel10.setIconTextGap(10);
+        namelLabel10ManagementRuangan.setBackground(new java.awt.Color(255, 255, 255));
+        namelLabel10ManagementRuangan.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
+        namelLabel10ManagementRuangan.setText("Management Ruangan");
+        namelLabel10ManagementRuangan.setIconTextGap(10);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3208, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 804, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout ManagementRuanganLayout = new javax.swing.GroupLayout(ManagementRuangan);
+        ManagementRuangan.setLayout(ManagementRuanganLayout);
+        ManagementRuanganLayout.setHorizontalGroup(
+            ManagementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ManagementRuanganLayout.setVerticalGroup(
+            ManagementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        NamelPanel9ManagementRuangan.setBackground(new java.awt.Color(0, 153, 153));
+
+        idRuanganjlabelManagementRuangan.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        idRuanganjlabelManagementRuangan.setText("ID Ruangan");
+
+        tipeRuanganManajementRuangan.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        tipeRuanganManajementRuangan.setText("Tipe Ruangan");
+
+        hargaRuanganManagementRuangan.setFont(new java.awt.Font("Bodoni MT", 1, 18)); // NOI18N
+        hargaRuanganManagementRuangan.setText("Harga Ruangan");
+
+        tfHargaRuanganManagementRuangan.setEditable(false);
+        tfHargaRuanganManagementRuangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHargaRuanganManagementRuanganActionPerformed(evt);
+            }
+        });
+
+        idRuanganManagementRuangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idRuanganManagementRuanganActionPerformed(evt);
+            }
+        });
+
+        btnCariManagementRuangan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCariManagementRuangan.setText("cari");
+        btnCariManagementRuangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariManagementRuanganActionPerformed(evt);
+            }
+        });
+
+        btnTAMBAHManagementRuangan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnTAMBAHManagementRuangan.setText("TAMBAH");
+        btnTAMBAHManagementRuangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTAMBAHManagementRuanganActionPerformed(evt);
+            }
+        });
+
+        btnHAPUSManagementRuangan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHAPUSManagementRuangan.setText("HAPUS");
+        btnHAPUSManagementRuangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHAPUSManagementRuanganActionPerformed(evt);
+            }
+        });
+
+        btNKEMBALIManagementRUangan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btNKEMBALIManagementRUangan.setText("KEMBALI");
+        btNKEMBALIManagementRUangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNKEMBALIManagementRUanganActionPerformed(evt);
+            }
+        });
+
+        jComboBoxTipeRuanganManagementRUangan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jComboBoxTipeRuanganManagementRUangan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "UMUM", "REGULER", "VIP" }));
+        jComboBoxTipeRuanganManagementRUangan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTipeRuanganManagementRUanganActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Namelpanel11ManajementRuanganLayout = new javax.swing.GroupLayout(Namelpanel11ManajementRuangan);
+        Namelpanel11ManajementRuangan.setLayout(Namelpanel11ManajementRuanganLayout);
+        Namelpanel11ManajementRuanganLayout.setHorizontalGroup(
+            Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Namelpanel11ManajementRuanganLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Namelpanel11ManajementRuanganLayout.createSequentialGroup()
+                        .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idRuanganjlabelManagementRuangan)
+                            .addComponent(tipeRuanganManajementRuangan)
+                            .addComponent(hargaRuanganManagementRuangan))
+                        .addGap(18, 18, 18)
+                        .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Namelpanel11ManajementRuanganLayout.createSequentialGroup()
+                                .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(idRuanganManagementRuangan)
+                                    .addGroup(Namelpanel11ManajementRuanganLayout.createSequentialGroup()
+                                        .addComponent(tfHargaRuanganManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCariManagementRuangan))
+                            .addGroup(Namelpanel11ManajementRuanganLayout.createSequentialGroup()
+                                .addComponent(jComboBoxTipeRuanganManagementRUangan, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(Namelpanel11ManajementRuanganLayout.createSequentialGroup()
+                        .addComponent(btnTAMBAHManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnHAPUSManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btNKEMBALIManagementRUangan, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 436, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        Namelpanel11ManajementRuanganLayout.setVerticalGroup(
+            Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Namelpanel11ManajementRuanganLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(idRuanganjlabelManagementRuangan)
+                    .addComponent(idRuanganManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCariManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tipeRuanganManajementRuangan)
+                    .addComponent(jComboBoxTipeRuanganManagementRUangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hargaRuanganManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfHargaRuanganManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Namelpanel11ManajementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTAMBAHManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHAPUSManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btNKEMBALIManagementRUangan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        tableManagementRuangan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID Ruangan ", "Tipe Ruangan", "HargaRuangan"
+            }
+        ));
+        jScrollPane3.setViewportView(tableManagementRuangan);
+
+        javax.swing.GroupLayout NamelPanel9ManagementRuanganLayout = new javax.swing.GroupLayout(NamelPanel9ManagementRuangan);
+        NamelPanel9ManagementRuangan.setLayout(NamelPanel9ManagementRuanganLayout);
+        NamelPanel9ManagementRuanganLayout.setHorizontalGroup(
+            NamelPanel9ManagementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NamelPanel9ManagementRuanganLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(NamelPanel9ManagementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Namelpanel11ManajementRuangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap())
+        );
+        NamelPanel9ManagementRuanganLayout.setVerticalGroup(
+            NamelPanel9ManagementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NamelPanel9ManagementRuanganLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Namelpanel11ManajementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3)
+                .addGap(12, 12, 12))
+        );
 
         javax.swing.GroupLayout ruanganPanelLayout = new javax.swing.GroupLayout(ruanganPanel);
         ruanganPanel.setLayout(ruanganPanelLayout);
@@ -812,15 +1178,26 @@ public class mainView extends javax.swing.JFrame {
             ruanganPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ruanganPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10)
-                .addContainerGap(820, Short.MAX_VALUE))
+                .addGroup(ruanganPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ruanganPanelLayout.createSequentialGroup()
+                        .addComponent(namelLabel10ManagementRuangan)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(ruanganPanelLayout.createSequentialGroup()
+                        .addComponent(NamelPanel9ManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(214, 214, 214)
+                        .addComponent(ManagementRuangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         ruanganPanelLayout.setVerticalGroup(
-            ruanganPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            ruanganPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(ruanganPanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(754, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(ManagementRuangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(ruanganPanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(namelLabel10ManagementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NamelPanel9ManagementRuangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         mainPanel.add(ruanganPanel, "card8");
@@ -976,6 +1353,91 @@ public class mainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void tanggalTextFieldRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanggalTextFieldRekamMedisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tanggalTextFieldRekamMedisActionPerformed
+
+    private void TextFieldDiagnosaRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldDiagnosaRekamMedisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldDiagnosaRekamMedisActionPerformed
+
+    private void IDRekamMedisTextFieldRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDRekamMedisTextFieldRekamMedisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDRekamMedisTextFieldRekamMedisActionPerformed
+
+    private void btnCariRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariRekamMedisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCariRekamMedisActionPerformed
+
+    private void btnTAMBAHRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTAMBAHRekamMedisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTAMBAHRekamMedisActionPerformed
+
+    private void btnHAPUSRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHAPUSRekamMedisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHAPUSRekamMedisActionPerformed
+
+    private void btNKEMBALIRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNKEMBALIRekamMedisActionPerformed
+    mainPanel.removeAll();
+        mainPanel.repaint();
+        mainPanel.revalidate();
+        
+        mainPanel.add(dashboardPanel);
+        mainPanel.repaint();
+        mainPanel.revalidate();        // TODO add your handling code here:
+    }//GEN-LAST:event_btNKEMBALIRekamMedisActionPerformed
+
+    private void tfHargaRuanganManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHargaRuanganManagementRuanganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHargaRuanganManagementRuanganActionPerformed
+
+    private void idRuanganManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idRuanganManagementRuanganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idRuanganManagementRuanganActionPerformed
+
+    private void btnCariManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariManagementRuanganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCariManagementRuanganActionPerformed
+
+    private void btnTAMBAHManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTAMBAHManagementRuanganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTAMBAHManagementRuanganActionPerformed
+
+    private void btnHAPUSManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHAPUSManagementRuanganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHAPUSManagementRuanganActionPerformed
+
+    private void btNKEMBALIManagementRUanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNKEMBALIManagementRUanganActionPerformed
+        mainPanel.removeAll();
+        mainPanel.repaint();
+        mainPanel.revalidate();
+        
+        mainPanel.add(dashboardPanel);
+        mainPanel.repaint();
+        mainPanel.revalidate();
+    }//GEN-LAST:event_btNKEMBALIManagementRUanganActionPerformed
+
+    private void jComboBoxTipeRuanganManagementRUanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipeRuanganManagementRUanganActionPerformed
+
+    String tipe = jComboBoxTipeRuanganManagementRUangan.getSelectedItem().toString();
+
+    switch (tipe) {
+        case "UMUM":
+            tfHargaRuanganManagementRuangan.setText("Rp200.000");
+            break;
+        case "REGULER":
+            tfHargaRuanganManagementRuangan.setText("Rp500.000");
+            break;
+        case "VIP":
+            tfHargaRuanganManagementRuangan.setText("Rp1.000.000");
+            break;
+        default:
+            tfHargaRuanganManagementRuangan.setText("");
+            break;
+    }
+    // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxTipeRuanganManagementRUanganActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1012,20 +1474,39 @@ public class mainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField IDRekamMedisTextFieldRekamMedis;
+    private javax.swing.JPanel ManagementRuangan;
+    private javax.swing.JLabel NamelLabel7RekamMedis;
+    private javax.swing.JPanel NamelPanel9ManagementRuangan;
+    private javax.swing.JPanel NamelPanel9RekamMedis;
+    private javax.swing.JPanel Namelanel10;
+    private javax.swing.JPanel Namelpanel11ManajementRuangan;
+    private javax.swing.JTextField TextFieldDiagnosaRekamMedis;
     private javax.swing.JPanel bodyPanel;
+    private javax.swing.JButton btNKEMBALIManagementRUangan;
+    private javax.swing.JButton btNKEMBALIRekamMedis;
+    private javax.swing.JButton btnHAPUSManagementRuangan;
+    private javax.swing.JButton btnHAPUSRekamMedis;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnHapus1;
     private javax.swing.JButton btnKembali;
     private javax.swing.JButton btnKembali1;
+    private javax.swing.JButton btnTAMBAHManagementRuangan;
+    private javax.swing.JButton btnTAMBAHRekamMedis;
     private javax.swing.JButton btnTambah;
     private javax.swing.JPanel dashboardPanel;
+    private javax.swing.JLabel diagnosaRekamMedis;
+    private javax.swing.JLabel hargaRuanganManagementRuangan;
+    private javax.swing.JLabel idRekamMedisRekamMeidis;
+    private javax.swing.JTextField idRuanganManagementRuangan;
+    private javax.swing.JLabel idRuanganjlabelManagementRuangan;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBoxTipeRuanganManagementRUangan;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1043,7 +1524,6 @@ public class mainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -1054,9 +1534,12 @@ public class mainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton menuDashboard;
@@ -1067,11 +1550,18 @@ public class mainView extends javax.swing.JFrame {
     private javax.swing.JButton menuRekamMedis;
     private javax.swing.JButton menuRuangan;
     private javax.swing.JButton menuTransaksi;
+    private javax.swing.JLabel namelLabel10ManagementRuangan;
     private javax.swing.JPanel obatPanel;
     private javax.swing.JPanel pasienPanel;
     private javax.swing.JPanel pegawaiPanel;
     private javax.swing.JPanel rekamMedisPanel;
     private javax.swing.JPanel ruanganPanel;
+    private javax.swing.JTable tableManagementRuangan;
+    private javax.swing.JTable tableRekamMedis;
+    private javax.swing.JLabel tanggalRekamMedis;
+    private javax.swing.JTextField tanggalTextFieldRekamMedis;
+    private javax.swing.JTextField tfHargaRuanganManagementRuangan;
+    private javax.swing.JLabel tipeRuanganManajementRuangan;
     private javax.swing.JPanel transaksiPanel;
     private javax.swing.JTextField txtFieldAlamat;
     private javax.swing.JTextField txtFieldIDPasien1;
