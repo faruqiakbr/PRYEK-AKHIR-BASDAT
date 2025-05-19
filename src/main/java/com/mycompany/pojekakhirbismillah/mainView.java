@@ -3,6 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.pojekakhirbismillah;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -37,7 +46,6 @@ public class mainView extends javax.swing.JFrame {
         menuRekamMedis = new javax.swing.JButton();
         menuInventarisObat = new javax.swing.JButton();
         menuTransaksi = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
         dashboardPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -126,6 +134,7 @@ public class mainView extends javax.swing.JFrame {
         jComboBoxTipeRuanganManagementRUangan = new javax.swing.JComboBox<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableManagementRuangan = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -246,11 +255,6 @@ public class mainView extends javax.swing.JFrame {
             }
         });
         menuPanel.add(menuTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 240, 60));
-
-        jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/call.png"))); // NOI18N
-        jLabel3.setText("119");
-        menuPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 830, -1, -1));
 
         mainPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         mainPanel.setLayout(new java.awt.CardLayout());
@@ -1202,6 +1206,11 @@ public class mainView extends javax.swing.JFrame {
 
         mainPanel.add(ruanganPanel, "card8");
 
+        jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/call.png"))); // NOI18N
+        jLabel3.setText("119");
+        mainPanel.add(jLabel3, "card9");
+
         javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
         bodyPanel.setLayout(bodyPanelLayout);
         bodyPanelLayout.setHorizontalGroup(
@@ -1370,7 +1379,76 @@ public class mainView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCariRekamMedisActionPerformed
 
     private void btnTAMBAHRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTAMBAHRekamMedisActionPerformed
-        // TODO add your handling code here:
+    // 1. Ambil nilai input
+    String id = IDRekamMedisTextFieldRekamMedis.getText().trim();
+    String tanggalInput = tanggalTextFieldRekamMedis.getText().trim();
+    String diagnosa = TextFieldDiagnosaRekamMedis.getText().trim();
+    
+    // 2. Validasi input kosong
+    if(id.isEmpty() || tanggalInput.isEmpty() || diagnosa.isEmpty()) {
+        JOptionPane.showMessageDialog(this, 
+            "Semua field harus diisi!", 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    // 3. Validasi dan konversi format tanggal
+    String tanggalDatabase;
+    try {
+        SimpleDateFormat sdfInput = new SimpleDateFormat("dd MMMM yyyy", new Locale("id", "ID"));
+        SimpleDateFormat sdfDisplay = new SimpleDateFormat("dd MMMM yyyy", new Locale("id", "ID"));
+        SimpleDateFormat sdfDatabase = new SimpleDateFormat("yyyy-MM-dd");
+        
+        // Parse dan validasi
+        Date date = sdfInput.parse(tanggalInput);
+        
+        // Cek jika tanggal lebih besar dari hari ini
+        if(date.after(new Date())) {
+            JOptionPane.showMessageDialog(this,
+                "Tanggal tidak boleh lebih besar dari hari ini",
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // Format untuk ditampilkan (konsistensi penulisan)
+        String tanggalTampil = sdfDisplay.format(date);
+        tanggalDatabase = sdfDatabase.format(date);
+        
+        // Update field dengan format yang konsisten
+        tanggalTextFieldRekamMedis.setText(tanggalTampil);
+        
+    } catch (ParseException e) {
+        JOptionPane.showMessageDialog(this, 
+            "Format tanggal tidak valid!\nGunakan format DD Bulan TTTT (contoh: 01 April 2023)\n" +
+            "Pastikan bulan menggunakan huruf kapital di awal (April bukan april)", 
+            "Error Format Tanggal", 
+            JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    // 4. Tambahkan ke tabel (simpan dalam format database)
+    DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
+    model.addRow(new Object[]{
+        id, 
+        tanggalTextFieldRekamMedis.getText(), // Format tampilan
+        diagnosa
+    });
+    
+    // 5. Bersihkan form
+    IDRekamMedisTextFieldRekamMedis.setText("");
+    tanggalTextFieldRekamMedis.setText("");
+    TextFieldDiagnosaRekamMedis.setText("");
+    IDRekamMedisTextFieldRekamMedis.requestFocus();
+    
+    // 6. Notifikasi sukses
+    JOptionPane.showMessageDialog(this,
+        "Data berhasil ditambahkan",
+        "Sukses",
+        JOptionPane.INFORMATION_MESSAGE);
+
+    // TODO add your handling code here:
     }//GEN-LAST:event_btnTAMBAHRekamMedisActionPerformed
 
     private void btnHAPUSRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHAPUSRekamMedisActionPerformed
@@ -1557,7 +1635,7 @@ public class mainView extends javax.swing.JFrame {
     private javax.swing.JPanel rekamMedisPanel;
     private javax.swing.JPanel ruanganPanel;
     private javax.swing.JTable tableManagementRuangan;
-    private javax.swing.JTable tableRekamMedis;
+    protected javax.swing.JTable tableRekamMedis;
     private javax.swing.JLabel tanggalRekamMedis;
     private javax.swing.JTextField tanggalTextFieldRekamMedis;
     private javax.swing.JTextField tfHargaRuanganManagementRuangan;
