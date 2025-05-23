@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.pojekakhirbismillah;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,13 +20,69 @@ import javax.swing.table.DefaultTableModel;
  * @author faruq
  */
 public class mainView extends javax.swing.JFrame {
+    
+private void cariRekam() {
+    String cariID = IDRekamMedisTextFieldRekamMedis.getText().trim();
+    DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
+    
+    for (int i = 0; i < model.getRowCount(); i++) {
+        if (model.getValueAt(i, 0).toString().equalsIgnoreCase(cariID)) {
+            tableRekamMedis.setRowSelectionInterval(i, i);
+            return;
+        }
+    }
 
-    /**
-     * Creates new form mainView
-     */
+    JOptionPane.showMessageDialog(this, "ID Rekam Medis tidak ditemukan.");
+}
+private void tambahRuangan() {
+    String id = idRuanganManagementRuangan.getText().trim();
+    String tipe = jComboBoxTipeRuanganManagementRUangan.getSelectedItem().toString();
+    String harga = tfHargaRuanganManagementRuangan.getText().trim();
+
+    if (id.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "ID Ruangan tidak boleh kosong!");
+        return;
+    }
+
+    DefaultTableModel model = (DefaultTableModel) tableManagementRuangan.getModel();
+    model.addRow(new Object[]{id, tipe, harga});
+}
+    private void TambahRekam() {
+        String id = IDRekamMedisTextFieldRekamMedis.getText().trim();
+        String nama = tanggalTextFieldRekamMedis.getText().trim();
+        String diagnosa = TextFieldDiagnosaRekamMedis.getText().trim();
+        
+        DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
+        model.addRow(new Object[]{id, nama, diagnosa});
+    }
     public mainView() {
         initComponents();
+        btnCariRekamMedis.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+        String cariID = IDRekamMedisTextFieldRekamMedis.getText().trim();
+        DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
+
+        boolean ditemukan = false;
+
+        for (int i = 0; i < model.getRowCount(); i++) {
+            if (model.getValueAt(i, 0).toString().equalsIgnoreCase(cariID)) {
+                tableRekamMedis.setRowSelectionInterval(i, i); // pilih baris
+                tableRekamMedis.scrollRectToVisible(tableRekamMedis.getCellRect(i +5 , 4, true)); // scroll ke sana
+                ditemukan = true;
+                break;
+            }
+        }
+
+        if (!ditemukan) {
+            JOptionPane.showMessageDialog(null, "ID Ruangan tidak ditemukan.");
+        }
+        }
+});
+        DefaultTableModel model_tabel = new DefaultTableModel(
+    new Object[]{"ID Rekam Medis", "Tanggal", "Diagnosa"}, 0);
+    tableRekamMedis.setModel(model_tabel);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,7 +164,7 @@ public class mainView extends javax.swing.JFrame {
         tanggalTextFieldRekamMedis = new javax.swing.JTextField();
         TextFieldDiagnosaRekamMedis = new javax.swing.JTextField();
         IDRekamMedisTextFieldRekamMedis = new javax.swing.JTextField();
-        javax.swing.JButton btnCariRekamMedis = new javax.swing.JButton();
+        btnCariRekamMedis = new javax.swing.JButton();
         btnTAMBAHRekamMedis = new javax.swing.JButton();
         btnHAPUSRekamMedis = new javax.swing.JButton();
         btNKEMBALIRekamMedis = new javax.swing.JButton();
@@ -127,7 +185,7 @@ public class mainView extends javax.swing.JFrame {
         hargaRuanganManagementRuangan = new javax.swing.JLabel();
         tfHargaRuanganManagementRuangan = new javax.swing.JTextField();
         idRuanganManagementRuangan = new javax.swing.JTextField();
-        javax.swing.JButton btnCariManagementRuangan = new javax.swing.JButton();
+        btnCariManagementRuangan = new javax.swing.JButton();
         btnTAMBAHManagementRuangan = new javax.swing.JButton();
         btnHAPUSManagementRuangan = new javax.swing.JButton();
         btNKEMBALIManagementRUangan = new javax.swing.JButton();
@@ -887,13 +945,9 @@ public class mainView extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        tableRekamMedis.setForeground(new java.awt.Color(255, 255, 255));
         tableRekamMedis.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "ID Rekam Medis", "Tanggal", "Diagnosa"
@@ -1150,7 +1204,7 @@ public class mainView extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "ID Ruangan ", "Tipe Ruangan", "HargaRuangan"
+                "ID Ruangan ", "Tipe Ruangan", "Harga Ruangan"
             }
         ));
         jScrollPane3.setViewportView(tableManagementRuangan);
@@ -1375,84 +1429,24 @@ public class mainView extends javax.swing.JFrame {
     }//GEN-LAST:event_IDRekamMedisTextFieldRekamMedisActionPerformed
 
     private void btnCariRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariRekamMedisActionPerformed
-        // TODO add your handling code here:
+    btnCariRekamMedis.addActionListener(e -> cariRekam());        // TODO add your handling code here:
     }//GEN-LAST:event_btnCariRekamMedisActionPerformed
 
     private void btnTAMBAHRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTAMBAHRekamMedisActionPerformed
-    // 1. Ambil nilai input
-    String id = IDRekamMedisTextFieldRekamMedis.getText().trim();
-    String tanggalInput = tanggalTextFieldRekamMedis.getText().trim();
-    String diagnosa = TextFieldDiagnosaRekamMedis.getText().trim();
-    
-    // 2. Validasi input kosong
-    if(id.isEmpty() || tanggalInput.isEmpty() || diagnosa.isEmpty()) {
-        JOptionPane.showMessageDialog(this, 
-            "Semua field harus diisi!", 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    
-    // 3. Validasi dan konversi format tanggal
-    String tanggalDatabase;
-    try {
-        SimpleDateFormat sdfInput = new SimpleDateFormat("dd MMMM yyyy", new Locale("id", "ID"));
-        SimpleDateFormat sdfDisplay = new SimpleDateFormat("dd MMMM yyyy", new Locale("id", "ID"));
-        SimpleDateFormat sdfDatabase = new SimpleDateFormat("yyyy-MM-dd");
-        
-        // Parse dan validasi
-        Date date = sdfInput.parse(tanggalInput);
-        
-        // Cek jika tanggal lebih besar dari hari ini
-        if(date.after(new Date())) {
-            JOptionPane.showMessageDialog(this,
-                "Tanggal tidak boleh lebih besar dari hari ini",
-                "Error",
-                JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        // Format untuk ditampilkan (konsistensi penulisan)
-        String tanggalTampil = sdfDisplay.format(date);
-        tanggalDatabase = sdfDatabase.format(date);
-        
-        // Update field dengan format yang konsisten
-        tanggalTextFieldRekamMedis.setText(tanggalTampil);
-        
-    } catch (ParseException e) {
-        JOptionPane.showMessageDialog(this, 
-            "Format tanggal tidak valid!\nGunakan format DD Bulan TTTT (contoh: 01 April 2023)\n" +
-            "Pastikan bulan menggunakan huruf kapital di awal (April bukan april)", 
-            "Error Format Tanggal", 
-            JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    
-    // 4. Tambahkan ke tabel (simpan dalam format database)
-    DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
-    model.addRow(new Object[]{
-        id, 
-        tanggalTextFieldRekamMedis.getText(), // Format tampilan
-        diagnosa
-    });
-    
-    // 5. Bersihkan form
-    IDRekamMedisTextFieldRekamMedis.setText("");
-    tanggalTextFieldRekamMedis.setText("");
-    TextFieldDiagnosaRekamMedis.setText("");
-    IDRekamMedisTextFieldRekamMedis.requestFocus();
-    
-    // 6. Notifikasi sukses
-    JOptionPane.showMessageDialog(this,
-        "Data berhasil ditambahkan",
-        "Sukses",
-        JOptionPane.INFORMATION_MESSAGE);
-
-    // TODO add your handling code here:
+        TambahRekam();
+            // TODO add your handling code here:
     }//GEN-LAST:event_btnTAMBAHRekamMedisActionPerformed
 
     private void btnHAPUSRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHAPUSRekamMedisActionPerformed
-        // TODO add your handling code here:
+    int selectedRow = tableRekamMedis.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
+            model.removeRow(selectedRow);
+        } else {
+            JOptionPane.showMessageDialog(null, "Pilih baris yang ingin dihapus!");
+        }
+        // TODO add your handling de here:
     }//GEN-LAST:event_btnHAPUSRekamMedisActionPerformed
 
     private void btNKEMBALIRekamMedisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNKEMBALIRekamMedisActionPerformed
@@ -1478,11 +1472,19 @@ public class mainView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCariManagementRuanganActionPerformed
 
     private void btnTAMBAHManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTAMBAHManagementRuanganActionPerformed
+    tambahRuangan();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTAMBAHManagementRuanganActionPerformed
 
     private void btnHAPUSManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHAPUSManagementRuanganActionPerformed
-        // TODO add your handling code here:
+    int selectedRow = tableRekamMedis.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
+            model.removeRow(selectedRow);
+        } else {
+            JOptionPane.showMessageDialog(null, "Pilih baris yang ingin dihapus!");
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_btnHAPUSManagementRuanganActionPerformed
 
     private void btNKEMBALIManagementRUanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNKEMBALIManagementRUanganActionPerformed
@@ -1563,6 +1565,8 @@ public class mainView extends javax.swing.JFrame {
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JButton btNKEMBALIManagementRUangan;
     private javax.swing.JButton btNKEMBALIRekamMedis;
+    private javax.swing.JButton btnCariManagementRuangan;
+    private javax.swing.JButton btnCariRekamMedis;
     private javax.swing.JButton btnHAPUSManagementRuangan;
     private javax.swing.JButton btnHAPUSRekamMedis;
     private javax.swing.JButton btnHapus;
