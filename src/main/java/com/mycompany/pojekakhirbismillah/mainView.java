@@ -20,7 +20,21 @@ import javax.swing.table.DefaultTableModel;
  * @author faruq
  */
 public class mainView extends javax.swing.JFrame {
+
+private void cariManagement() {
+    String cariID = idRuanganManagementRuangan.getText().trim();
+    DefaultTableModel model = (DefaultTableModel) tableManagementRuangan.getModel();
     
+    for (int i = 0; i < model.getRowCount(); i++) {
+        if (model.getValueAt(i, 0).toString().equalsIgnoreCase(cariID)) {
+            tableManagementRuangan.setRowSelectionInterval(i, i);
+            return;
+        }
+    }
+
+    JOptionPane.showMessageDialog(this, "ID Rekam Medis tidak ditemukan.");
+}
+
 private void cariRekam() {
     String cariID = IDRekamMedisTextFieldRekamMedis.getText().trim();
     DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
@@ -190,7 +204,7 @@ private void tambahRuangan() {
         btnHAPUSManagementRuangan = new javax.swing.JButton();
         btNKEMBALIManagementRUangan = new javax.swing.JButton();
         jComboBoxTipeRuanganManagementRUangan = new javax.swing.JComboBox<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
         tableManagementRuangan = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
@@ -942,7 +956,7 @@ private void tambahRuangan() {
                     .addComponent(btnTAMBAHRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHAPUSRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btNKEMBALIRekamMedis, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tableRekamMedis.setModel(new javax.swing.table.DefaultTableModel(
@@ -972,7 +986,7 @@ private void tambahRuangan() {
                 .addContainerGap()
                 .addComponent(Namelanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 592, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1198,16 +1212,13 @@ private void tambahRuangan() {
 
         tableManagementRuangan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "ID Ruangan ", "Tipe Ruangan", "Harga Ruangan"
+                "ID Ruangan", "Tipe Ruangan", "Harga Ruangan"
             }
         ));
-        jScrollPane3.setViewportView(tableManagementRuangan);
+        jScrollPane4.setViewportView(tableManagementRuangan);
 
         javax.swing.GroupLayout NamelPanel9ManagementRuanganLayout = new javax.swing.GroupLayout(NamelPanel9ManagementRuangan);
         NamelPanel9ManagementRuangan.setLayout(NamelPanel9ManagementRuanganLayout);
@@ -1216,8 +1227,8 @@ private void tambahRuangan() {
             .addGroup(NamelPanel9ManagementRuanganLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(NamelPanel9ManagementRuanganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Namelpanel11ManajementRuangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
+                    .addComponent(jScrollPane4)
+                    .addComponent(Namelpanel11ManajementRuangan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         NamelPanel9ManagementRuanganLayout.setVerticalGroup(
@@ -1226,8 +1237,8 @@ private void tambahRuangan() {
                 .addContainerGap()
                 .addComponent(Namelpanel11ManajementRuangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3)
-                .addGap(12, 12, 12))
+                .addComponent(jScrollPane4)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout ruanganPanelLayout = new javax.swing.GroupLayout(ruanganPanel);
@@ -1468,6 +1479,7 @@ private void tambahRuangan() {
     }//GEN-LAST:event_idRuanganManagementRuanganActionPerformed
 
     private void btnCariManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariManagementRuanganActionPerformed
+        btnCariManagementRuangan.addActionListener(e -> cariManagement());        // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCariManagementRuanganActionPerformed
 
@@ -1477,14 +1489,14 @@ private void tambahRuangan() {
     }//GEN-LAST:event_btnTAMBAHManagementRuanganActionPerformed
 
     private void btnHAPUSManagementRuanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHAPUSManagementRuanganActionPerformed
-    int selectedRow = tableRekamMedis.getSelectedRow();
+    int selectedRow = tableManagementRuangan.getSelectedRow();
 
         if (selectedRow != -1) {
-            DefaultTableModel model = (DefaultTableModel) tableRekamMedis.getModel();
+            DefaultTableModel model = (DefaultTableModel) tableManagementRuangan.getModel();
             model.removeRow(selectedRow);
         } else {
             JOptionPane.showMessageDialog(null, "Pilih baris yang ingin dihapus!");
-        }        // TODO add your handling code here:
+        }     // TODO add your handling code here:
     }//GEN-LAST:event_btnHAPUSManagementRuanganActionPerformed
 
     private void btNKEMBALIManagementRUanganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNKEMBALIManagementRUanganActionPerformed
@@ -1621,7 +1633,7 @@ private void tambahRuangan() {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton menuDashboard;
@@ -1638,7 +1650,7 @@ private void tambahRuangan() {
     private javax.swing.JPanel pegawaiPanel;
     private javax.swing.JPanel rekamMedisPanel;
     private javax.swing.JPanel ruanganPanel;
-    private javax.swing.JTable tableManagementRuangan;
+    protected javax.swing.JTable tableManagementRuangan;
     protected javax.swing.JTable tableRekamMedis;
     private javax.swing.JLabel tanggalRekamMedis;
     private javax.swing.JTextField tanggalTextFieldRekamMedis;
