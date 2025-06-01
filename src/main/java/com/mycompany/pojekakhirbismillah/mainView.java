@@ -144,12 +144,9 @@ private void tambahRuangan() {
         menuInventarisObat = new javax.swing.JButton();
         menuTransaksi = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
->>>>>>> f8690ff
         dashboardPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-=======
->>>>>>> f8690ffc310acda770dfd270022b8e0123c8c988
         pasienPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -233,16 +230,8 @@ private void tambahRuangan() {
         btNKEMBALIManagementRUangan = new javax.swing.JButton();
         jComboBoxTipeRuanganManagementRUangan = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
-
->>>>>>> f8690ff
         tableManagementRuangan = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-=======
-        tableDataDokter2 = new javax.swing.JTable();
-        dashboardPanel = new javax.swing.JPanel();
-        jLabelDashboard = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
->>>>>>> f8690ffc310acda770dfd270022b8e0123c8c988
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -367,7 +356,6 @@ private void tambahRuangan() {
         mainPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         mainPanel.setLayout(new java.awt.CardLayout());
 
->>>>>>> f8690ff
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
         jLabel4.setText("Dashboard");
@@ -411,12 +399,6 @@ private void tambahRuangan() {
         jLabel5.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
         jLabel5.setText("Data Pasien");
         jLabel5.setIconTextGap(10);
-=======
-        faruqiPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        faruqiPanel5.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
-        faruqiPanel5.setText("Data Pasien");
-        faruqiPanel5.setIconTextGap(10);
->>>>>>> f8690ffc310acda770dfd270022b8e0123c8c988
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
@@ -1318,48 +1300,6 @@ private void tambahRuangan() {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/call.png"))); // NOI18N
         jLabel3.setText("119");
         mainPanel.add(jLabel3, "card9");
-
-        jLabelDashboard.setBackground(new java.awt.Color(255, 255, 255));
-        jLabelDashboard.setFont(new java.awt.Font("Rockwell Condensed", 1, 36)); // NOI18N
-        jLabelDashboard.setText("Dashboard");
-        jLabelDashboard.setIconTextGap(10);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1092, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout dashboardPanelLayout = new javax.swing.GroupLayout(dashboardPanel);
-        dashboardPanel.setLayout(dashboardPanelLayout);
-        dashboardPanelLayout.setHorizontalGroup(
-            dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashboardPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dashboardPanelLayout.createSequentialGroup()
-                        .addComponent(jLabelDashboard)
-                        .addContainerGap(1074, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        dashboardPanelLayout.setVerticalGroup(
-            dashboardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashboardPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelDashboard)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        mainPanel.add(dashboardPanel, "cardDashboard");
 
         javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
         bodyPanel.setLayout(bodyPanelLayout);
